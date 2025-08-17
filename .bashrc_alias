@@ -3,6 +3,8 @@ alias t='gnome-terminal';
 alias gt="/usr/bin/gnome-terminal --tab &"
 
 # add by hkq begin
+export PS1='\e[1;35m\u\e[0m \e[1;34m\h\e[0m \e[1;31m\w\e[0m\n\e[41m\e[1;37m>\e[0m '  # 格式：用户名 主机名 当前目录 >
+
 alias ls='ls --time-style=iso --color=auto'
 alias la="ls -a"
 alias ll='ls -lh'
@@ -11,6 +13,7 @@ alias llt='ls -lhtr'
 alias lld='ls -lhd'
 alias lldt='ls -lhdtr'
 
+cd() { builtin cd "$@" && ls -a --color=auto; }
 alias ..='cd ..'
 alias ...='cd ../.'
 alias ....='cd ../..'
@@ -47,6 +50,7 @@ alias glg='git log -3'
 alias gci='git commit'
 alias gdf='git diff'
 alias gbc='git branch -vv'
+alias gcl='git clone'
 
 # project
 alias share='cd /mnt/hgfs/virtual_share/'
